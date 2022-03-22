@@ -3,9 +3,10 @@ import styled from "styled-components";
 import { UserContext } from "../../../providers/UserProvider";
 
 export const UserIconWithName = (props) => {
-  const { src, name, isAdmin } = props;
-  const context = useContext(UserContext);
-  console.log(context);
+  const { src, name } = props;
+  const { userInfo } = useContext(UserContext);
+  const isAdmin = userInfo ? userInfo.isAdmin : false;
+
   return (
     <SContainer>
       <SImg height={160} width={120} src={src} alt="プロフィール写真" />
@@ -30,6 +31,6 @@ const SName = styled.p`
 
 const SEdit = styled.span`
   text-decoration: underline;
-  color: black;
+  color: green;
   cursor: pointer;
 `;
