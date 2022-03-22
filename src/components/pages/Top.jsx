@@ -7,6 +7,7 @@ export const Top = () => {
   const history = useHistory();
   const onClickAdmin = () =>
     history.push({ pathname: "/users", state: { inAdmin: true } });
+
   const onClickGeneral = () =>
     history.push({ pathname: "/users", state: { inAdmin: false } });
   return (

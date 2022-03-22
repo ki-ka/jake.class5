@@ -1,7 +1,11 @@
+import React, { useContext } from "react";
 import styled from "styled-components";
+import { UserContext } from "../../../providers/UserProvider";
 
 export const UserIconWithName = (props) => {
   const { src, name, isAdmin } = props;
+  const context = useContext(UserContext);
+  console.log(context);
   return (
     <SContainer>
       <SImg height={160} width={120} src={src} alt="プロフィール写真" />
@@ -26,6 +30,6 @@ const SName = styled.p`
 
 const SEdit = styled.span`
   text-decoration: underline;
-  color: #aaa;
+  color: black;
   cursor: pointer;
 `;
